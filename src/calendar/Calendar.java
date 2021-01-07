@@ -1,10 +1,28 @@
 package calendar;
+import java.util.*;
 
 public class Calendar {
 
+	private static final int[] MAX_DAYS_OF_MONTH = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	public int getMaxDaysOfMonth(int month) {
+		return MAX_DAYS_OF_MONTH[month - 1];
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Hello, Calendar");
+		//int [] MaxDayofMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		System.out.println("달을 입력하세요.");
+		
+		Scanner scan = new Scanner(System.in);
+		Calendar cal = new Calendar();
+		
+		int month = scan.nextInt();
+		System.out.printf("%d월은 %d일까지 있습니다.\n",month,cal.getMaxDaysOfMonth(month));
+		
+		scan.close();
+		
 		System.out.println("일 월 화 수 목 금 토");
 		System.out.println("--------------------");
 		System.out.println(" 1  2  3  4  5  6  7");
